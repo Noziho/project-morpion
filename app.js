@@ -22,6 +22,7 @@ function CrossOrCercle (div, type, srcIMG) {
     })
 }
 
+
 CrossOrCercle (div1, "click", "cross.png");
 CrossOrCercle (div1, "auxclick", "rond.svg.png");
 
@@ -48,4 +49,5 @@ CrossOrCercle (div8, "auxclick", "rond.svg.png");
 
 CrossOrCercle (div9, "click", "cross.png");
 CrossOrCercle (div9, "auxclick", "rond.svg.png");
+
 
