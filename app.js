@@ -14,7 +14,7 @@ let div8 = document.getElementById("d8");
 let div9 = document.getElementById("d9");
 
 
-function CrossOrCercle (div, type, srcIMG) {
+function CrossOrCircle (div, type, srcIMG) {
     let createIMG = document.createElement("img");
     div.addEventListener(type, function (){
         createIMG.src = srcIMG;
@@ -23,31 +23,31 @@ function CrossOrCercle (div, type, srcIMG) {
 }
 
 
-CrossOrCercle (div1, "click", "cross.png");
-CrossOrCercle (div1, "auxclick", "rond.svg.png");
+CrossOrCircle (div1, "click", "cross.png");
+CrossOrCircle (div1, "auxclick", "rond.svg.png");
 
-CrossOrCercle (div2, "click", "cross.png");
-CrossOrCercle (div2, "auxclick", "rond.svg.png");
+CrossOrCircle (div2, "click", "cross.png");
+CrossOrCircle (div2, "auxclick", "rond.svg.png");
 
-CrossOrCercle (div3, "click", "cross.png");
-CrossOrCercle (div3, "auxclick", "rond.svg.png");
+CrossOrCircle (div3, "click", "cross.png");
+CrossOrCircle (div3, "auxclick", "rond.svg.png");
 
-CrossOrCercle (div4, "click", "cross.png");
-CrossOrCercle (div4, "auxclick", "rond.svg.png");
+CrossOrCircle (div4, "click", "cross.png");
+CrossOrCircle (div4, "auxclick", "rond.svg.png");
 
-CrossOrCercle (div5, "click", "cross.png");
-CrossOrCercle (div5, "auxclick", "rond.svg.png");
+CrossOrCircle (div5, "click", "cross.png");
+CrossOrCircle (div5, "auxclick", "rond.svg.png");
 
-CrossOrCercle (div6, "click", "cross.png");
-CrossOrCercle (div6, "auxclick", "rond.svg.png");
+CrossOrCircle (div6, "click", "cross.png");
+CrossOrCircle (div6, "auxclick", "rond.svg.png");
 
-CrossOrCercle (div7, "click", "cross.png");
-CrossOrCercle (div7, "auxclick", "rond.svg.png");
+CrossOrCircle (div7, "click", "cross.png");
+CrossOrCircle (div7, "auxclick", "rond.svg.png");
 
-CrossOrCercle (div8, "click", "cross.png");
-CrossOrCercle (div8, "auxclick", "rond.svg.png");
+CrossOrCircle (div8, "click", "cross.png");
+CrossOrCircle (div8, "auxclick", "rond.svg.png");
 
-CrossOrCercle (div9, "click", "cross.png");
-CrossOrCercle (div9, "auxclick", "rond.svg.png");
+CrossOrCircle (div9, "click", "cross.png");
+CrossOrCircle (div9, "auxclick", "rond.svg.png");
 
 
