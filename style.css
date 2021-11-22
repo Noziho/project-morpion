@@ -33,8 +33,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 200px;
-    height: 200px;
+    width: 20rem;
+    height: 20rem;
     border: white 2px solid;
     color: white;
     font-size: 12rem;
@@ -73,4 +73,106 @@ a {
     width: 100%;
     height: 4rem;
 }
+
+@media screen and (max-width: 1225px) {
+
+    #item {
+        width: 30%;
+    }
+    .size {
+        width: 10rem;
+        height: 10rem;
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 1040px) {
+
+
+    #item {
+        width: 40%;
+    }
+    .size {
+        width: 10rem;
+        height: 10rem;
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 780px) {
+
+    #item {
+        width: 50%;
+    }
+    .size {
+        width: 10rem;
+        height: 10rem;
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 625px) {
+
+
+    #item {
+        width: 60%;
+    }
+    .size {
+        width: 10rem;
+        height: 10rem;
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 520px) {
+
+    #item {
+        width: 70%;
+    }
+    .size {
+        width: 10rem;
+        height: 10rem;
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 520px) {
+
+
+    #item {
+        width: 80%;
+    }
+    .size {
+        width: 10rem;
+        height: 10rem;
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 390px) {
+
+    #item {
+        width: 90%;
+    }
+    .size {
+        width: 10rem;
+        height: 10rem;
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 350px) {
+
+    #item {
+        width: 100%;
+    }
+    .size {
+        width: 10rem;
+        height: 10rem;
+        font-size: 2rem;
+    }
+
+}
+
+
 
