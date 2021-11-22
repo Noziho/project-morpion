@@ -1,62 +1,88 @@
+let player1 = false;
+let player2 = false;
+const CLICK_LEFT = 0;
+const CLICK_RIGHT = 2;
+let cases = document.getElementsByClassName("size");
+
 
 document.addEventListener('contextmenu', function (event){
     event.preventDefault();
 });
 
-let div1 = document.getElementById("d1");
-let div2 = document.getElementById("d2");
-let div3 = document.getElementById("d3");
-let div4 = document.getElementById("d4");
-let div5 = document.getElementById("d5");
-let div6 = document.getElementById("d6");
-let div7 = document.getElementById("d7");
-let div8 = document.getElementById("d8");
-let div9 = document.getElementById("d9");
+for (const square of cases) {
+    square.addEventListener('mouseup', function (event){
+        switch (event.button) {
+            case CLICK_LEFT:
+                crossOrCircle(this, "X");
+                break;
 
+            case CLICK_RIGHT:
+                crossOrCircle(this, "O");
+                break;
 
-function CrossOrCircle (div, type, text) {
-
-    let createP = document.createElement("p");
-    div.addEventListener(type, function (){
-        createP.innerHTML = text;
-        createP.style.fontSize = "10rem";
-        div.append(createP);
-
-
-
+        }
+        checkCases();
     })
 }
 
 
+function checkCases () {
+    player1 = horizontal("X");
+    player2 = horizontal("O");
+    if (!player1 && !player2) {
+        player1 = vertical("X");
+        player2 = vertical("O");
+        if (!player1 && !player2) {
+            player1 = diagonal("X");
+            player2 = diagonal("O");
 
-CrossOrCircle (div1, "click", "X");
-CrossOrCircle (div1, "auxclick", "O");
-if (div1.innerHTML === "O" && div2.innerHTML === "O" && div3.innerHTML === "O") {
-    alert("sa marche");
+        }
+    }
+    if (player1){
+        alert("Player1 win !");
+    }
+    else if (player2) {
+        alert("Player2 win !")
+    }
 }
 
-CrossOrCircle (div2, "click", "X");
-CrossOrCircle (div2, "auxclick", "O");
+function horizontal (player) {
+    for (let i = 0; i <= 8; i +=3) {
+        if (cases[i].innerHTML === player && cases[i+1].innerHTML === player && cases[i+2].innerHTML === player) {
+            return true;
+        }
+    }
+    return false;
+}
 
-CrossOrCircle (div3, "click", "X");
-CrossOrCircle (div3, "auxclick", "O");
+function vertical (player) {
+    for (let i = 0; i <= 2; i++) {
+        if (cases[i].innerHTML === player && cases[i+3].innerHTML === player && cases[i+6].innerHTML === player) {
+            return true;
+        }
+    }
+    return false;
+}
 
-CrossOrCircle (div4, "click", "X");
-CrossOrCircle (div4, "auxclick", "O");
+function diagonal (player) {
+    for (let i = 0; i <= 2; i++) {
+        if (cases[0].innerHTML === player && cases[4].innerHTML === player && cases[8].innerHTML === player) {
+            return true;
+        }
+        else if (cases[2].innerHTML === player && cases[4].innerHTML === player && cases[6].innerHTML === player) {
+            return true;
+        }
+    }
+    return false;
+}
 
-CrossOrCircle (div5, "click", "X");
-CrossOrCircle (div5, "auxclick", "O");
+function crossOrCircle (element, playerChar) {
+    if (!player1 && !player2) {
+        if (element.innerHTML.length === 0) {
+            element.innerHTML = playerChar;
+        }
+    }
+}
 
-CrossOrCircle (div6, "click", "X");
-CrossOrCircle (div6, "auxclick", "O");
-
-CrossOrCircle (div7, "click", "X");
-CrossOrCircle (div7, "auxclick", "O");
-
-CrossOrCircle (div8, "click", "X");
-CrossOrCircle (div8, "auxclick", "O");
-
-CrossOrCircle (div9, "click", "X");
-CrossOrCircle (div9, "auxclick", "O");
 
 
