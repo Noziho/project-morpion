@@ -1,27 +1,44 @@
 let player1 = false;
 let player2 = false;
-const CLICK_LEFT = 0;
-const CLICK_RIGHT = 2;
+let lastPlayerIsX = 0;
+let lastPlayerIsO = 0;
+let hitCounter = 0;
 let cases = document.getElementsByClassName("size");
+let winner = document.getElementById("winner");
 
 
 document.addEventListener('contextmenu', function (event){
     event.preventDefault();
 });
 
-for (const square of cases) {
-    square.addEventListener('mouseup', function (event){
+for (let i = 0; i < cases.length; i++) {
+    cases[i].addEventListener('mouseup', function (event){
         switch (event.button) {
-            case CLICK_LEFT:
-                crossOrCircle(this, "X");
+            case 0:
+                if (lastPlayerIsX === 0) {
+                    crossOrCircle(this, "X");
+                    lastPlayerIsX = 1;
+                    lastPlayerIsO = 0;
+                    hitCounter++;
+                }
                 break;
 
-            case CLICK_RIGHT:
-                crossOrCircle(this, "O");
+
+            case 2:
+                if(lastPlayerIsO === 0) {
+                    crossOrCircle(this, "O");
+                    lastPlayerIsX = 0;
+                    lastPlayerIsO = 1;
+                    hitCounter++;
+                }
                 break;
+
 
         }
+
         checkCases();
+        equality();
+
     })
 }
 
@@ -29,9 +46,11 @@ for (const square of cases) {
 function checkCases () {
     player1 = horizontal("X");
     player2 = horizontal("O");
+
     if (!player1 && !player2) {
         player1 = vertical("X");
         player2 = vertical("O");
+
         if (!player1 && !player2) {
             player1 = diagonal("X");
             player2 = diagonal("O");
@@ -39,10 +58,10 @@ function checkCases () {
         }
     }
     if (player1){
-        alert("Player1 win !");
+        winner.innerHTML = "Player1 win !";
     }
     else if (player2) {
-        alert("Player2 win !")
+        winner.innerHTML = "Player2 win !";
     }
 }
 
@@ -81,6 +100,12 @@ function crossOrCircle (element, playerChar) {
         if (element.innerHTML.length === 0) {
             element.innerHTML = playerChar;
         }
+    }
+}
+
+function equality () {
+    if (!player1 && !player2 && hitCounter === 9) {
+        winner.innerHTML = "Egalité";
     }
 }
 

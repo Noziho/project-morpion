@@ -74,6 +74,11 @@ a {
     height: 4rem;
 }
 
+#winner {
+    color: white;
+    font-size: 3rem;
+}
+
 @media screen and (max-width: 1225px) {
 
     #item {
