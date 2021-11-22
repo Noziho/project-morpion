@@ -6,11 +6,12 @@ let hitCounter = 0;
 let cases = document.getElementsByClassName("size");
 let winner = document.getElementById("winner");
 
-
+<!-- Delete default comportment for right click on all page. -->
 document.addEventListener('contextmenu', function (event){
     event.preventDefault();
 });
 
+<!-- Loop 'for' for add an addEventListener on all div, for print X or O and check up all conditions with different function -->
 for (let i = 0; i < cases.length; i++) {
     cases[i].addEventListener('mouseup', function (event){
         switch (event.button) {
@@ -38,11 +39,11 @@ for (let i = 0; i < cases.length; i++) {
 
         checkCases();
         equality();
-
     })
 }
 
 
+<!-- Function for checking case with horizontal/vertical/diagonal function -->
 function checkCases () {
     player1 = horizontal("X");
     player2 = horizontal("O");
@@ -65,6 +66,7 @@ function checkCases () {
     }
 }
 
+<!-- Check up for horizontal cases, if 3 cases have the same content it's true. Else it's false -->
 function horizontal (player) {
     for (let i = 0; i <= 8; i +=3) {
         if (cases[i].innerHTML === player && cases[i+1].innerHTML === player && cases[i+2].innerHTML === player) {
@@ -74,6 +76,7 @@ function horizontal (player) {
     return false;
 }
 
+<!-- Check up for vertical cases, if 3 cases vertical have the same content it's true. Else it's false -->
 function vertical (player) {
     for (let i = 0; i <= 2; i++) {
         if (cases[i].innerHTML === player && cases[i+3].innerHTML === player && cases[i+6].innerHTML === player) {
@@ -83,6 +86,7 @@ function vertical (player) {
     return false;
 }
 
+<!-- Check up for diagonal cases, if 3 diagonal cases have the same content it's true. Else it's false -->
 function diagonal (player) {
     for (let i = 0; i <= 2; i++) {
         if (cases[0].innerHTML === player && cases[4].innerHTML === player && cases[8].innerHTML === player) {
@@ -95,6 +99,14 @@ function diagonal (player) {
     return false;
 }
 
+<!-- Check up equality, if all cases are completed print "égalité" -->
+function equality () {
+    if (!player1 && !player2 && hitCounter === 9) {
+        winner.innerHTML = "Egalité";
+    }
+}
+
+<!-- print a X or O in differents cases when the player click right or left -->
 function crossOrCircle (element, playerChar) {
     if (!player1 && !player2) {
         if (element.innerHTML.length === 0) {
@@ -103,11 +115,7 @@ function crossOrCircle (element, playerChar) {
     }
 }
 
-function equality () {
-    if (!player1 && !player2 && hitCounter === 9) {
-        winner.innerHTML = "Egalité";
-    }
-}
+
 
 
 
