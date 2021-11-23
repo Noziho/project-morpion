@@ -66,8 +66,6 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-    align-content: center;
-    justify-items: center;
     text-decoration: none;
     color: white;
     width: 100%;
@@ -75,18 +73,23 @@ a {
 }
 
 #winner {
+    width: 25%;
     color: white;
     font-size: 3rem;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
 }
 
 @media screen and (max-width: 1225px) {
 
     #item {
-        width: 30%;
+        width: 60%;
     }
     .size {
-        width: 10rem;
-        height: 10rem;
+        width: 20rem;
+        height: 20rem;
         font-size: 2rem;
     }
 }
@@ -95,11 +98,22 @@ a {
 
 
     #item {
-        width: 40%;
+        width: 70%;
     }
     .size {
-        width: 10rem;
-        height: 10rem;
+        width: 20rem;
+        height: 20rem;
+        font-size: 8rem;
+    }
+}
+
+@media screen and (max-width: 876px) {
+    #item {
+        width: 80%;
+    }
+    .size {
+        width: 20rem;
+        height: 20rem;
         font-size: 2rem;
     }
 }

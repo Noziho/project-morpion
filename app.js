@@ -22,21 +22,16 @@ for (let i = 0; i < cases.length; i++) {
                     lastPlayerIsO = 0;
                     hitCounter++;
                 }
-                break;
 
 
-            case 2:
-                if(lastPlayerIsO === 0) {
+               else if(lastPlayerIsO === 0) {
                     crossOrCircle(this, "O");
                     lastPlayerIsX = 0;
                     lastPlayerIsO = 1;
                     hitCounter++;
                 }
                 break;
-
-
         }
-
         checkCases();
         equality();
     })
@@ -102,7 +97,7 @@ function diagonal (player) {
 <!-- Check up equality, if all cases are completed print "égalité" -->
 function equality () {
     if (!player1 && !player2 && hitCounter === 9) {
-        winner.innerHTML = "Egalité";
+        winner.innerHTML = "Equality";
     }
 }
 
